@@ -289,6 +289,7 @@ namespace Nop.Web.Factories
 
             //new address
             model.BillingNewAddress.CountryId = selectedCountryId;
+            
             await _addressModelFactory.PrepareAddressModelAsync(model.BillingNewAddress,
                 address: null,
                 excludeProperties: false,

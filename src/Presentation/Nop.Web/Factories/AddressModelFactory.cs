@@ -241,6 +241,9 @@ namespace Nop.Web.Factories
 
                 if (addressSettings.StateProvinceEnabled)
                 {
+                    if (addressSettings.CountryDefaultId != null)
+                        model.CountryId = model.CountryId ?? addressSettings.CountryDefaultId;
+
                     var languageId = (await _workContext.GetWorkingLanguageAsync()).Id;
                     var states = (await _stateProvinceService
                         .GetStateProvincesByCountryIdAsync(model.CountryId ?? 0, languageId))
@@ -290,6 +293,7 @@ namespace Nop.Web.Factories
             model.PhoneRequired = addressSettings.PhoneRequired;
             model.FaxEnabled = addressSettings.FaxEnabled;
             model.FaxRequired = addressSettings.FaxRequired;
+            model.CountryDefaultId = addressSettings.CountryDefaultId;
 
             //customer attribute services
             if (_addressAttributeService != null && _addressAttributeParser != null)

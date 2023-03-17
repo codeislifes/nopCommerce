@@ -51,6 +51,9 @@ namespace Nop.Web.Areas.Admin.Models.Settings
         [NopResourceDisplayName("Admin.Configuration.Settings.CustomerUser.AddressFormFields.CountryEnabled")]
         public bool CountryEnabled { get; set; }
 
+        [NopResourceDisplayName("Admin.Configuration.Settings.CustomerUser.AddressFormFields.CountryDefault")]
+        public int? CountryDefaultId { get; set; }
+
         [NopResourceDisplayName("Admin.Configuration.Settings.CustomerUser.AddressFormFields.StateProvinceEnabled")]
         public bool StateProvinceEnabled { get; set; }
 
